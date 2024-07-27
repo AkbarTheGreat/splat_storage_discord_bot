@@ -1,5 +1,5 @@
 FROM python:3.10.13-alpine3.19
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONUNBUFFERED=1
 
 RUN apk add --no-cache \
     build-base \
@@ -23,5 +23,5 @@ COPY ./run.py run.py
 COPY ./alembic alembic
 COPY ./bot bot
 
-CMD ./docker_entrypoint.sh
+CMD ["./docker_entrypoint.sh"]
 
